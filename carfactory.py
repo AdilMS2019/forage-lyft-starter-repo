@@ -1,4 +1,4 @@
-from car import Car
+from models.car import Car
 
 
 class CarFactory(Car):
