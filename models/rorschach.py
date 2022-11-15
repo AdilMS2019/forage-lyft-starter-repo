@@ -1,12 +1,11 @@
-from datetime import datetime
+from models.car import Car
+from engines.willoughby_engine import WilloughbyEngine
+from batteries.nubbin_battery import NubbinBattery
 
-from engine.willoughby_engine import WilloughbyEngine
 
+class Rorschach(Car):
+    def __init__(self):
+        super().__init__(WilloughbyEngine, NubbinBattery)
 
-class Rorschach(WilloughbyEngine):
     def needs_service(self):
-        service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 4)
-        if service_threshold_date < datetime.today().date() or self.engine_should_be_serviced():
-            return True
-        else:
-            return False
+        return self.battery.needs_service() or self.engine.needs_service()

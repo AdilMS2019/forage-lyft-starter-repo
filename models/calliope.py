@@ -1,16 +1,11 @@
-from datetime import datetime
-
 from car import Car
+from engines.capulet_engine import CapuletEngine
+from batteries.spindler_battery import SpindlerBattery
 
 
 class Calliope(Car):
-    def __init__(self, engine, battery):
-        super().__init__(engine, battery)
+    def __init__(self):
+        super().__init__(CapuletEngine, SpindlerBattery)
 
-    
     def needs_service(self):
-        service_threshold_date = self.last_service_date.replace(year=self.last_service_date.year + 2)
-        if service_threshold_date < datetime.today().date() or self.engine_should_be_serviced():
-            return True
-        else:
-            return False
+        return self.battery.needs_service() or self.engine.needs_service()
