@@ -30,21 +30,22 @@ class TestNubbin(unittest.TestCase):
 class TestSpindler(unittest.TestCase):
     def should_be_serviced(self):
         current_date = datetime.today().date()
-        battery = NubbinBattery(current_date.replace(
+        battery = SpindlerBattery(current_date.replace(
             year=current_date.year - 3), current_date)
         self.assertEqual(battery.needs_service(), True, "Should be true.")
 
     def should_not_be_serviced(self):
         current_date = datetime.today().date()
-        battery = NubbinBattery(current_date.replace(
+        battery = SpindlerBattery(current_date.replace(
             year=current_date.year - 1), current_date)
         self.assertEqual(battery.needs_service(), False, "Should be false.")
 
     def should_be_serviced_edge(self):
         current_date = datetime.today().date()
-        battery = NubbinBattery(current_date.replace(
+        battery = SpindlerBattery(current_date.replace(
             year=current_date.year - 2), current_date)
         self.assertEqual(battery.needs_service(), True, "Should be true.")
+
 
 class TestCapulet(unittest.TestCase):
     def should_be_serviced(self):
@@ -69,6 +70,7 @@ class TestCapulet(unittest.TestCase):
 
 
 # class TestWilloughby(unittest.TestCase):
+
 
     def should_be_serviced(self):
         pass
