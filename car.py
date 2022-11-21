@@ -1,4 +1,4 @@
-from src.servicable import Servicable
+from servicable import Servicable
 
 
 class Car(Servicable):
