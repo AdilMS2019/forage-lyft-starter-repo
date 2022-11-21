@@ -70,16 +70,14 @@ class TestCapulet(unittest.TestCase):
 
 
 # class TestWilloughby(unittest.TestCase):
+    # def should_be_serviced(self):
+    #     pass
 
+    # def should_not_be_serviced(self):
+    #     pass
 
-    def should_be_serviced(self):
-        pass
-
-    def should_not_be_serviced(self):
-        pass
-
-    def should_be_serviced_edge(self):
-        pass
+    # def should_be_serviced_edge(self):
+    #     pass
 
 
 if __name__ == '__main__':
