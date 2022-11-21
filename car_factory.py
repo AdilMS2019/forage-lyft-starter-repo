@@ -34,7 +34,7 @@ class CarFactory:
         engine = WilloughbyEngine(last_service_mileage, current_mileage)
         car = Car(engine, battery)
         return car
-    
+
     @staticmethod
     def create_thovex(current_date, last_service_date, current_mileage, last_service_mileage):
         battery = NubbinBattery(last_service_date, current_date)
